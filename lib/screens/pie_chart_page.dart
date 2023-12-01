@@ -2,7 +2,6 @@ import 'package:demo_chart/data/pie_chart_data.dart';
 import 'package:demo_chart/screens/widgets/ButtonView.dart';
 import 'package:demo_chart/screens/widgets/indicator_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class PieChartPage extends StatefulWidget {

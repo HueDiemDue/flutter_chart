@@ -1,5 +1,7 @@
 import 'package:demo_chart/data/pie_chart_data.dart';
 import 'package:demo_chart/data/simulator_chart_data.dart';
+import 'package:demo_chart/data/small_chart_data.dart';
+import 'package:demo_chart/screens/widgets/ButtonView.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -11,9 +13,17 @@ class SmallChartPage extends StatefulWidget {
 }
 
 class _SmallChartPageState extends State<SmallChartPage> {
+  late List<SplineAreaData> splineAreaData;
+  late bool changeNew;
+  late List<SplineData> splineData;
+
   @override
   void initState() {
     super.initState();
+    changeNew = false;
+    splineData = splines;
+    splineAreaData =
+        splines.map((e) => SplineAreaData(e.xValue, 0, e.yValue)).toList();
   }
 
   @override
@@ -25,11 +35,11 @@ class _SmallChartPageState extends State<SmallChartPage> {
       appBar: AppBar(
         title: const Text('Small Chart'),
       ),
-      body: Stack(
+      body: Column(
         children: [
-          Container(
-            width: widthDevice,
-            height: widthDevice * 2 / 3,
+          SizedBox(
+            width: widthDevice/2,
+            height: widthDevice * 2 / 3/2,
             child: SfCartesianChart(
               plotAreaBorderWidth: 0,
               primaryXAxis: NumericAxis(
@@ -43,22 +53,14 @@ class _SmallChartPageState extends State<SmallChartPage> {
               ),
               series: <CartesianSeries>[
                 SplineRangeAreaSeries<SplineAreaData, num>(
-                  dataSource: [
-                    SplineAreaData(1, 0, 1.5),
-                    SplineAreaData(2, 0, 2),
-                    SplineAreaData(3, 0, 3),
-                  ],
+                  dataSource: splineAreaData,
                   xValueMapper: (SplineAreaData data, _) => data.xValue,
                   lowValueMapper: (SplineAreaData data, _) => data.lowValue,
                   highValueMapper: (SplineAreaData data, _) => data.highValue,
                   color: Colors.red.withOpacity(0.1),
                 ),
                 SplineSeries<SplineData, num>(
-                  dataSource: [
-                    SplineData(1, 1.5),
-                    SplineData(2, 2),
-                    SplineData(3, 3),
-                  ],
+                  dataSource: splineData,
                   xValueMapper: (SplineData data, _) => data.xValue,
                   yValueMapper: (SplineData data, _) => data.yValue,
                   color: Colors.red,
@@ -76,6 +78,26 @@ class _SmallChartPageState extends State<SmallChartPage> {
                 ),
               ],
             ),
+          ),
+          ButtonView(
+            title: 'Change Data',
+            action: () {
+              setState(() {
+                if (changeNew) {
+                  splineData = splines;
+                  splineAreaData = splines
+                      .map((e) => SplineAreaData(e.xValue, 0, e.yValue))
+                      .toList();
+                  changeNew = false;
+                  return;
+                }
+                splineData = newSplines;
+                splineAreaData = newSplines
+                    .map((e) => SplineAreaData(e.xValue, 0, e.yValue))
+                    .toList();
+                changeNew = true;
+              });
+            },
           ),
         ],
       ),
