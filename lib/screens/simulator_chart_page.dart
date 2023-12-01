@@ -1,5 +1,4 @@
 import 'package:demo_chart/data/simulator_chart_data.dart';
-import 'package:demo_chart/data/small_chart_data.dart';
 import 'package:demo_chart/screens/widgets/ButtonView.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -79,7 +78,7 @@ class _SimulatorChartPageState extends State<SimulatorChartPage> {
                   ),
                   series: <CartesianSeries>[
                     SplineRangeAreaSeries<SplineAreaData, num>(
-                      dataSource:splinesArea,
+                      dataSource: splinesArea,
                       xValueMapper: (SplineAreaData data, _) => data.xValue,
                       lowValueMapper: (SplineAreaData data, _) => data.lowValue,
                       highValueMapper: (SplineAreaData data, _) =>
@@ -101,7 +100,7 @@ class _SimulatorChartPageState extends State<SimulatorChartPage> {
                       color: Colors.red,
                     ),
                     SplineSeries<SplineData, num>(
-                      dataSource:  splinesLower,
+                      dataSource: splinesLower,
                       xValueMapper: (SplineData data, _) => data.xValue,
                       yValueMapper: (SplineData data, _) => data.yValue,
                       color: Colors.white,
@@ -138,12 +137,14 @@ class _SimulatorChartPageState extends State<SimulatorChartPage> {
           ButtonView(
             title: 'Change Data',
             action: () {
-              setState(() {
-                splines = newSplineData;
-                splinesLower = newSplineDataLower;
-                splinesArea = newSplineArea;
-                splinesAreaLower = newSplineAreaLower;
-              });
+              setState(
+                () {
+                  splines = newSplineData;
+                  splinesLower = newSplineDataLower;
+                  splinesArea = newSplineArea;
+                  splinesAreaLower = newSplineAreaLower;
+                },
+              );
             },
           ),
         ],

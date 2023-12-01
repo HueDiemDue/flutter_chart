@@ -13,9 +13,11 @@ class SmallChartPage extends StatefulWidget {
 }
 
 class _SmallChartPageState extends State<SmallChartPage> {
-  late List<SplineAreaData> splineAreaData;
   late bool changeNew;
   late List<SplineData> splineData;
+  late List<SplineAreaData> splineAreaData;
+  late List<SplineData> lines;
+  late List<SplineAreaData> linesAreaData;
 
   @override
   void initState() {
@@ -24,12 +26,16 @@ class _SmallChartPageState extends State<SmallChartPage> {
     splineData = splines;
     splineAreaData =
         splines.map((e) => SplineAreaData(e.xValue, 0, e.yValue)).toList();
+    lines = splinesOverLimit;
+    linesAreaData = splinesOverLimit
+        .map((e) => SplineAreaData(e.xValue, 0, e.yValue))
+        .toList();
   }
 
   @override
   Widget build(BuildContext context) {
     final widthDevice = MediaQuery.of(context).size.width;
-    final List<double> dashArray = [5, 5];
+    final List<double> dashArray = [6, 6];
 
     return Scaffold(
       appBar: AppBar(
@@ -38,8 +44,8 @@ class _SmallChartPageState extends State<SmallChartPage> {
       body: Column(
         children: [
           SizedBox(
-            width: widthDevice/2,
-            height: widthDevice * 2 / 3/2,
+            width: widthDevice / 2,
+            height: widthDevice * 2 / 3 / 2,
             child: SfCartesianChart(
               plotAreaBorderWidth: 0,
               primaryXAxis: NumericAxis(
@@ -66,11 +72,46 @@ class _SmallChartPageState extends State<SmallChartPage> {
                   color: Colors.red,
                 ),
                 SplineSeries<SplineData, num>(
-                  dataSource: [
-                    SplineData(0.5, 0),
-                    SplineData(2, 0),
-                    SplineData(3.5, 0),
-                  ],
+                  dataSource: standardY,
+                  xValueMapper: (SplineData data, _) => data.xValue,
+                  yValueMapper: (SplineData data, _) => data.yValue,
+                  dashArray: dashArray,
+                  color: Colors.red,
+                  width: 3,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            width: widthDevice / 2,
+            height: widthDevice * 2 / 3 / 2,
+            child: SfCartesianChart(
+              plotAreaBorderWidth: 0,
+              primaryXAxis: NumericAxis(
+                minimum: 0,
+                isVisible: false,
+              ),
+              primaryYAxis: NumericAxis(
+                minimum: 0,
+                maximum: 4,
+                isVisible: false,
+              ),
+              series: <CartesianSeries>[
+                RangeAreaSeries<SplineAreaData, num>(
+                  dataSource: linesAreaData,
+                  xValueMapper: (SplineAreaData data, _) => data.xValue,
+                  lowValueMapper: (SplineAreaData data, _) => data.lowValue,
+                  highValueMapper: (SplineAreaData data, _) => data.highValue,
+                  color: Colors.red.withOpacity(0.1),
+                ),
+                LineSeries<SplineData, num>(
+                  dataSource: lines,
+                  xValueMapper: (SplineData data, _) => data.xValue,
+                  yValueMapper: (SplineData data, _) => data.yValue,
+                  color: Colors.red,
+                ),
+                SplineSeries<SplineData, num>(
+                  dataSource: standardLimit,
                   xValueMapper: (SplineData data, _) => data.xValue,
                   yValueMapper: (SplineData data, _) => data.yValue,
                   dashArray: dashArray,
@@ -82,21 +123,18 @@ class _SmallChartPageState extends State<SmallChartPage> {
           ButtonView(
             title: 'Change Data',
             action: () {
-              setState(() {
-                if (changeNew) {
-                  splineData = splines;
-                  splineAreaData = splines
+              setState(
+                () {
+                  splineData = newSplines;
+                  splineAreaData = newSplines
                       .map((e) => SplineAreaData(e.xValue, 0, e.yValue))
                       .toList();
-                  changeNew = false;
-                  return;
-                }
-                splineData = newSplines;
-                splineAreaData = newSplines
-                    .map((e) => SplineAreaData(e.xValue, 0, e.yValue))
-                    .toList();
-                changeNew = true;
-              });
+                  lines = newSplinesOverLimit;
+                  linesAreaData = newSplinesOverLimit
+                      .map((e) => SplineAreaData(e.xValue, 0, e.yValue))
+                      .toList();
+                },
+              );
             },
           ),
         ],

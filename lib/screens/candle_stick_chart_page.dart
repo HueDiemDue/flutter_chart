@@ -24,7 +24,7 @@ class _CandleStickChartPageState extends State<CandleStickChartPage> {
   double? _initialZoomFactorX;
   double? _currentZoomFactorY;
   double? _initialZoomFactorY;
-  double intervalY = 20;
+  double intervalY = 10;
 
   @override
   void initState() {
@@ -42,7 +42,7 @@ class _CandleStickChartPageState extends State<CandleStickChartPage> {
         )
         .toList();
     _tooltip = TooltipBehavior(enable: true);
-    intervalY = 20;
+    intervalY = 10;
   }
 
   @override
@@ -52,7 +52,7 @@ class _CandleStickChartPageState extends State<CandleStickChartPage> {
     final listVertical = (maxY - minY) / 10;
     const String _axisXTitle = 'AxisX';
     const String _axisYTitle = 'AxisY';
-    double intervalX = 3;
+    double intervalX = 5;
     debugPrint('build ${candleSticks.length}');
 
     return Scaffold(

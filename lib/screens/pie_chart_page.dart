@@ -117,9 +117,11 @@ class _PieChartPageState extends State<PieChartPage> {
           ButtonView(
             title: 'Change Data',
             action: () {
-              setState(() {
-                pieChart = newPieData;
-              });
+              setState(
+                () {
+                  pieChart = newPieData;
+                },
+              );
             },
           ),
         ],
