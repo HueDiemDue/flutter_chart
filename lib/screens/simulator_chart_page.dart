@@ -1,5 +1,5 @@
 import 'package:demo_chart/data/simulator_chart_data.dart';
-import 'package:demo_chart/screens/widgets/ButtonView.dart';
+import 'package:demo_chart/screens/widgets/button_view.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 

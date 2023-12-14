@@ -1,4 +1,4 @@
-import 'package:demo_chart/screens/widgets/ButtonView.dart';
+import 'package:demo_chart/screens/widgets/button_view.dart';
 import 'package:demo_chart/utils/urls.dart';
 import 'package:flutter/material.dart';
 
@@ -41,6 +41,12 @@ class _ChartPageState extends State<ChartPage> {
               title: 'Small chart',
               action: () {
                 Navigator.pushNamed(context, Urls.smallChart);
+              },
+            ),
+            ButtonView(
+              title: 'Candle stick full chart',
+              action: () {
+                Navigator.pushNamed(context, Urls.candleStickFullChart);
               },
             ),
           ],

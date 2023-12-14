@@ -1,4 +1,5 @@
 import 'package:demo_chart/screens/candle_stick_chart_page.dart';
+import 'package:demo_chart/screens/candle_stick_full_chart_page.dart';
 import 'package:demo_chart/screens/chart_page.dart';
 import 'package:demo_chart/screens/pie_chart_page.dart';
 import 'package:demo_chart/screens/simulator_chart_page.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         Urls.candleStickChart: (context) => const CandleStickChartPage(),
         Urls.simulatorChart: (context) => const SimulatorChartPage(),
         Urls.smallChart: (context) => const SmallChartPage(),
+        Urls.candleStickFullChart: (context) => const CandleStickFullChartPage(),
       },
     );
   }

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class CandleStickData {
   CandleStickData({
     required this.x,
@@ -23,7 +25,49 @@ List<CandleStickData> candleStickData = [
     close: 97.13,
   ),
   CandleStickData(
+    x: DateTime(2023, 10, 1, 12),
+    open: 108.97,
+    high: 101.19,
+    low: 95.36,
+    close: 97.13,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 1, 18),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 1, 20),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
     x: DateTime(2023, 10, 2),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 2, 12),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 2, 18),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 2, 20),
     open: 98.41,
     high: 101.46,
     low: 93.42,
@@ -37,11 +81,53 @@ List<CandleStickData> candleStickData = [
     close: 97.34,
   ),
   CandleStickData(
+    x: DateTime(2023, 10, 3, 12),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 3, 18),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 3, 20),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
     x: DateTime(2023, 10, 4),
     open: 96.47,
     high: 97.33,
     low: 93.69,
     close: 94.02,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 4, 12),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 4, 18),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 4, 20),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
   ),
   CandleStickData(
     x: DateTime(2023, 10, 5),
@@ -51,6 +137,27 @@ List<CandleStickData> candleStickData = [
     close: 93.99,
   ),
   CandleStickData(
+    x: DateTime(2023, 10, 5, 12),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 5, 18),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 5, 20),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
     x: DateTime(2023, 10, 6),
     open: 95.02,
     high: 98.89,
@@ -58,11 +165,53 @@ List<CandleStickData> candleStickData = [
     close: 96.04,
   ),
   CandleStickData(
+    x: DateTime(2023, 10, 6, 12),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 6, 18),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 6, 20),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
     x: DateTime(2023, 10, 7),
     open: 96.31,
     high: 98.0237,
     low: 93.32,
     close: 96.91,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 7, 12),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 7, 18),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 10, 7, 20),
+    open: 98.41,
+    high: 101.46,
+    low: 93.42,
+    close: 101.42,
   ),
   CandleStickData(
     x: DateTime(2023, 10, 8),
@@ -206,31 +355,136 @@ List<CandleStickData> candleStickData = [
   ),
   CandleStickData(
     x: DateTime(2023, 10, 28),
-    open: 193.13,
-    high: 196.35,
-    low: 192.59,
-    close: 193.99,
+    open: 93.13,
+    high: 96.35,
+    low: 92.59,
+    close: 93.99,
   ),
   CandleStickData(
     x: DateTime(2023, 10, 29),
-    open: 195.02,
-    high: 198.89,
-    low: 194.61,
-    close: 196.04,
+    open: 93.13,
+    high: 96.35,
+    low: 92.59,
+    close: 93.99,
   ),
   CandleStickData(
     x: DateTime(2023, 10, 30),
-    open: 101.52,
-    high: 121.53,
-    low: 92.39,
-    close: 97.34,
+    open: 93.13,
+    high: 96.35,
+    low: 92.59,
+    close: 93.99,
   ),
   CandleStickData(
     x: DateTime(2023, 10, 31),
-    open: 101.52,
+    open: 93.13,
+    high: 96.35,
+    low: 92.59,
+    close: 93.99,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 1),
+    open: 128.97,
+    high: 121.19,
+    low: 115.36,
+    close: 117.13,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 2),
+    open: 128.41,
+    high: 121.46,
+    low: 93.42,
+    close: 101.42,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 3),
+    open: 121.52,
     high: 121.53,
-    low: 102.39,
-    close: 107.34,
+    low: 112.39,
+    close: 117.34,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 4),
+    open: 126.47,
+    high: 117.33,
+    low: 93.69,
+    close: 94.02,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 5),
+    open: 93.13,
+    high: 96.35,
+    low: 92.59,
+    close: 93.99,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 6),
+    open: 95.02,
+    high: 98.89,
+    low: 94.61,
+    close: 96.04,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 7),
+    open: 96.31,
+    high: 98.0237,
+    low: 93.32,
+    close: 96.91,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 8),
+    open: 96.86,
+    high: 103.75,
+    low: 96.65,
+    close: 103.01,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 9),
+    open: 102.39,
+    high: 102.83,
+    low: 100.15,
+    close: 102.26,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 10),
+    open: 106.5,
+    high: 106.5,
+    low: 106.5,
+    close: 106.5,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 11),
+    open: 96.31,
+    high: 98.0237,
+    low: 93.32,
+    close: 96.91,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 12),
+    open: 96.86,
+    high: 103.75,
+    low: 96.65,
+    close: 103.01,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 13),
+    open: 102.39,
+    high: 102.83,
+    low: 100.15,
+    close: 102.26,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 14),
+    open: 106.5,
+    high: 106.5,
+    low: 106.5,
+    close: 106.5,
+  ),
+  CandleStickData(
+    x: DateTime(2023, 11, 15),
+    open: 102.39,
+    high: 102.83,
+    low: 100.15,
+    close: 102.26,
   ),
 ];
 
@@ -459,4 +713,24 @@ class LineData {
 
   final DateTime x;
   final double y;
+}
+
+class ColumnData {
+  ColumnData(this.x, this.y, this.color);
+
+  final DateTime x;
+  final double y;
+  final int color;
+}
+
+class SplineAreaData {
+  SplineAreaData(
+    this.xValue,
+    this.lowValue,
+    this.highValue,
+  );
+
+  final DateTime xValue;
+  final double lowValue;
+  final double highValue;
 }

@@ -1,5 +1,5 @@
 import 'package:demo_chart/data/candle_stick_data.dart';
-import 'package:demo_chart/screens/widgets/ButtonView.dart';
+import 'package:demo_chart/screens/widgets/button_view.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:intl/intl.dart';
@@ -103,22 +103,6 @@ class _CandleStickChartPageState extends State<CandleStickChartPage> {
                 visibleMinimum: 0,
                 interval: intervalX,
                 axisLabelFormatter: (AxisLabelRenderDetails details) {
-                  final index = details.value.toInt();
-                  debugPrint('axisLabelFormatter $index===${details.text}');
-
-                  bool isZooming = false;
-                  bool isZoomingX = false;
-                  bool isZoomingY = false;
-                  if (_currentZoomFactorX != null &&
-                      _initialZoomFactorX != null) {
-                    isZoomingX = _currentZoomFactorX! > _initialZoomFactorX!;
-                  }
-                  if (_currentZoomFactorY != null &&
-                      _initialZoomFactorY != null) {
-                    isZoomingY = _currentZoomFactorY! > _initialZoomFactorY!;
-                  }
-                  isZooming = isZoomingX || isZoomingY;
-
                   return ChartAxisLabel(
                     details.text,
                     const TextStyle(

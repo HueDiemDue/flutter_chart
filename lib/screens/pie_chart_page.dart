@@ -1,5 +1,5 @@
 import 'package:demo_chart/data/pie_chart_data.dart';
-import 'package:demo_chart/screens/widgets/ButtonView.dart';
+import 'package:demo_chart/screens/widgets/button_view.dart';
 import 'package:demo_chart/screens/widgets/indicator_view.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -109,9 +109,10 @@ class _PieChartPageState extends State<PieChartPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: pieChart
                 .map((e) => Indicator(
-                    color: e.color,
-                    text: e.x,
-                    isLast: e.color == pieChart.last.color))
+                      color: e.color,
+                      text: e.x,
+                      isLast: e.color == pieChart.last.color,
+                    ))
                 .toList(),
           ),
           ButtonView(
